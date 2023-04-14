@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MyQuizApp</string>
     <string name="nameHintText">Name</string>
+    <string name="question">What country does this flag belong to?</string>
 </resources>

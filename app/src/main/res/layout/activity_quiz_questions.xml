@@ -1,9 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".QuizQuestionsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/questionAsked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:text="@string/question"
+            android:textColor="#363a43"
+            android:textSize="25sp">
+
+        </TextView>
+
+        <ImageView
+            android:id="@+id/countryImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:contentDescription="Quiz country Image"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:src="@drawable/ic_flag_of_germany">
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+
+            <ProgressBar
+                android:id="@+id/linearProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:indeterminate="false"
+                android:max="10"
+                android:minHeight="50dp"
+                android:paddingStart="15dp"
+                android:progress="1">
+
+            </ProgressBar>
+
+            <TextView
+                android:id="@+id/questionCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="1/10"
+                android:textSize="15sp">
+
+            </TextView>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/option1"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="option 1"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:padding="15dp"
+            app:strokeColor="@android:color/darker_gray"
+            app:strokeWidth="1.5dp"></Button>
+
+        <Button
+            android:id="@+id/option2"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="option 2"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:padding="15dp"
+            app:strokeColor="@android:color/darker_gray"
+            app:strokeWidth="1.5dp"></Button>
+
+        <Button
+            android:id="@+id/option3"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="option 3"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:padding="15dp"
+            app:strokeColor="@android:color/darker_gray"
+            app:strokeWidth="1.5dp"></Button>
+
+        <Button
+            android:id="@+id/option4"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="option 4"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:padding="15dp"
+            app:strokeColor="@android:color/darker_gray"
+            app:strokeWidth="1.5dp"></Button>
+
+        <Button
+            android:id="@+id/submitBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+            android:text="SUBMIT"
+            android:padding="15dp"
+            android:textSize="17sp"></Button>
+
+    </LinearLayout>
+
+</ScrollView>

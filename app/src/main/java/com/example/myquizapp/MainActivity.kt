@@ -1,5 +1,6 @@
 package com.example.myquizapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -23,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         startButton.setOnClickListener {
             if (textInput.text.isNotEmpty()){
                 // Navigate to quiz screen
+                val intent = Intent(this, QuizQuestionsActivity::class.java)
+                startActivity(intent)
             }else {
                 val snackBar = Snackbar.make(coordinatorLayout, "Please make sure to enter your name before starting", Snackbar.LENGTH_LONG)
                 snackBar.show()
