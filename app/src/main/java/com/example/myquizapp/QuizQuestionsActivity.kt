@@ -1,5 +1,6 @@
 package com.example.myquizapp
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -13,9 +14,13 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 
 class QuizQuestionsActivity : AppCompatActivity(), OnClickListener{
+
+    private var myUserName: String? = null
+
     private var index: Int = 0
     private var countriesData: List<Question>? = null
     private var selectedOptionPosition: Int = 0
+    private var quizScore: Int = 0
 
     private var question: TextView? = null
     private var imageView: ImageView? = null
@@ -33,6 +38,8 @@ class QuizQuestionsActivity : AppCompatActivity(), OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_questions)
+
+         myUserName = intent.getStringExtra(Constants.userName)
 
          countriesData = Constants.getQuestions()
 
@@ -122,7 +129,10 @@ class QuizQuestionsActivity : AppCompatActivity(), OnClickListener{
                 // correct answer
 
                 options[selectedOptionPosition]?.setBackgroundColor(Color.parseColor("#00FF00"))
+
+                quizScore += 1
             }else {
+                // wrong answer
                 //
                 options[selectedOptionPosition]?.setBackgroundColor(Color.parseColor("#ff0000"))
                 //
@@ -143,6 +153,14 @@ class QuizQuestionsActivity : AppCompatActivity(), OnClickListener{
 
         }else if (submitButton?.text == "FINISH"){
             // Navigate to the new screen and show results
+            val intent: Intent = Intent(this, ResultActivity::class.java).also {
+
+                it.putExtra(Constants.userName, myUserName)
+                it.putExtra(Constants.correctAnswers, quizScore)
+                it.putExtra(Constants.totalQuestions, countriesData!!.size)
+                startActivity(it)
+            }
+            finish()
         }
         else {
             index += 1

@@ -25,7 +25,9 @@ class MainActivity : AppCompatActivity() {
             if (textInput.text.isNotEmpty()){
                 // Navigate to quiz screen
                 val intent = Intent(this, QuizQuestionsActivity::class.java)
+                intent.putExtra(Constants.userName, textInput.text.toString())
                 startActivity(intent)
+                finish()
             }else {
                 val snackBar = Snackbar.make(coordinatorLayout, "Please make sure to enter your name before starting", Snackbar.LENGTH_LONG)
                 snackBar.show()

@@ -50,33 +50,46 @@
     </TextView>
 
     <TextView
+        android:id="@+id/userName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingLeft="50dp"
-        android:paddingRight="50dp"
         android:paddingTop="10dp"
+        android:paddingRight="50dp"
         android:text="JKD"
         android:textColor="@color/white"
-        android:textStyle="bold"
         android:textSize="20sp"
-        >
+        android:textStyle="bold">
 
     </TextView>
 
 
     <TextView
+        android:id="@+id/userScore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingLeft="50dp"
-        android:paddingRight="50dp"
         android:paddingTop="30dp"
+        android:paddingRight="50dp"
         android:text="Your score as 2 out of 10"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        >
+        android:textSize="20sp">
 
     </TextView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/white"
+        android:text="START QUIZ AGAIN"
+        android:textColor="@color/design_default_color_primary"
+        android:onClick="startQuizAgain"
+        android:textSize="18sp"
+        android:textStyle="bold">
+
+    </Button>
 
 </LinearLayout>
